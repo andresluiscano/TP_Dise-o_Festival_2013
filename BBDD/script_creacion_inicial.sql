@@ -1,3 +1,9 @@
+IF NOT EXISTS (SELECT * FROM sys.databases WHERE name = 'TP-ROCK')
+BEGIN
+    CREATE DATABASE [TP-ROCK]
+END
+GO 
+
 USE [TP-ROCK]
 GO
 --------------------------Eliminamos las tablas, si existen------------------------------
