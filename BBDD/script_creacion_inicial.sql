@@ -134,6 +134,8 @@ CREATE TABLE Usuario
 	password nvarchar(100) NOT NULL
 );
 
+--Agrego un usuario
+INSERT INTO Usuario (nombre,password) VALUES ('admin','admin');
 
 
 
