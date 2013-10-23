@@ -21,13 +21,13 @@ namespace Festival
         {
 
         }
-        SqlConnection miConexion = new SqlConnection (@"Data Source=WOLF\SQLSERVER2008; Initial Catalog=Festival; Integrated Security=true");
+        SqlConnection miConexion = new SqlConnection (@"Data Source=WOLF\SQLSERVER2008; Initial Catalog=TP-ROCK; Integrated Security=true");
  
         private void btnIngresar_Click(object sender, EventArgs e)
         {
             Form Form2 = new frmMenu2();
             miConexion.Open();
-            SqlCommand consulta= new SqlCommand("SELECT * FROM usuarios WHERE usuario='"+txtUser.Text+"' and password='"+txtPass.Text+"'", miConexion);
+            SqlCommand consulta= new SqlCommand("SELECT * FROM Usuario WHERE nombre='"+txtUser.Text+"' and password='"+txtPass.Text+"'", miConexion);
             SqlDataReader ejecuta = consulta.ExecuteReader();
 
             if (ejecuta.Read() == true)
