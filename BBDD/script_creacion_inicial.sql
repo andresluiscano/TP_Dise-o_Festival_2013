@@ -31,7 +31,6 @@ CREATE TABLE Festival
 	pje_dev_por_anul float
 );
 
-
 --Crea tabla DiaFestival
 CREATE TABLE DiaFestival
 (
@@ -77,16 +76,16 @@ CREATE TABLE Sector
 	FOREIGN KEY (id_dia) REFERENCES DiaFestival(id_dia)
 );
 
-
 --Crea tabla Entrada
 CREATE TABLE Entrada
 (
-	id_entrada integer PRIMARY KEY,
+	id_entrada integer,
 	fec_vta datetime,
 	monto float,
-	nro_ticket integer,
+	nro_ticket integer PRIMARY KEY IDENTITY(1000,101),
 	id_sector integer,
 	id_estado integer,
+	dni_cliente int unique,
 	FOREIGN KEY (id_sector) REFERENCES Sector(id_sector),
 	FOREIGN KEY (id_estado) REFERENCES Estado(id_estado)
 );
@@ -101,7 +100,6 @@ CREATE TABLE PrecioEntrada
 	id_entrada integer,
 	id_dia integer,
 	id_tipo_entrada integer,
-	FOREIGN KEY (id_entrada) REFERENCES Entrada(id_entrada),
 	FOREIGN KEY (id_tipo_entrada) REFERENCES TipoEntrada(id_tipo_entrada),
 	FOREIGN KEY (id_dia) REFERENCES DiaFestival(id_dia)
 );
@@ -119,7 +117,7 @@ CREATE TABLE Fila
 CREATE TABLE Butaca
 (
 	id_butaca integer PRIMARY KEY,
-	--numero integer, <-- WTF???
+	numero integer,
 	disponibilidad bit,
 	id_fila integer,
 	id_entrada integer,
@@ -128,7 +126,6 @@ CREATE TABLE Butaca
 	FOREIGN KEY (id_dia) REFERENCES DiaFestival(id_dia),
 	FOREIGN KEY (id_dia) REFERENCES DiaFestival(id_dia)
 );
-
 
 --Crea tabla Usuario
 CREATE TABLE Usuario
@@ -177,6 +174,15 @@ DELETE GrupoMusical
 WHERE nombre = @nom
 
 GO
+--Store Procedure para comprar entrada
+CREATE PROCEDURE comprarEntrada
+(@dni int, @mont int, @fech datetime)
+AS
+INSERT
+INTO Entrada(dni_cliente, monto, fec_vta)
+VALUES(@dni, @mont, @fech)
+
+GO
 DROP PROCEDURE insertarFestival
 GO
 DROP PROCEDURE eliminarFestival
@@ -203,4 +209,5 @@ DROP TABLE DiaFestival
 GO
 DROP TABLE Festival
 GO
-
+DROP TABLE Usuario
+GO

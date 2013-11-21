@@ -104,7 +104,6 @@
             this.Name = "frmModBajaBanda";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Baja Banda";
-            this.Load += new System.EventHandler(this.frmModBajaBanda_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

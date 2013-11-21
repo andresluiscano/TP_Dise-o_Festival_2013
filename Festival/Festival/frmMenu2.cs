@@ -86,5 +86,10 @@ namespace Festival
         {
 
         }
+
+        private void comprarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new frmComprarEntradas(this);
+        }
     }
 }
