@@ -46,9 +46,6 @@
             this.comuniqueseConSuAdministradorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salirToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.salirDeAplicaciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.entradasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.comprarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.anularToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -85,8 +82,7 @@
             // 
             this.editarToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.festivalesToolStripMenuItem,
-            this.bandasToolStripMenuItem,
-            this.entradasToolStripMenuItem});
+            this.bandasToolStripMenuItem});
             this.editarToolStripMenuItem.Name = "editarToolStripMenuItem";
             this.editarToolStripMenuItem.Size = new System.Drawing.Size(49, 20);
             this.editarToolStripMenuItem.Text = "Editar";
@@ -98,7 +94,7 @@
             this.agregarToolStripMenuItem1,
             this.modificarEliminarToolStripMenuItem1});
             this.festivalesToolStripMenuItem.Name = "festivalesToolStripMenuItem";
-            this.festivalesToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.festivalesToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.festivalesToolStripMenuItem.Text = "Festivales";
             // 
             // agregarToolStripMenuItem1
@@ -121,7 +117,7 @@
             this.agregarToolStripMenuItem,
             this.modificarEliminarToolStripMenuItem});
             this.bandasToolStripMenuItem.Name = "bandasToolStripMenuItem";
-            this.bandasToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.bandasToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.bandasToolStripMenuItem.Text = "Bandas";
             this.bandasToolStripMenuItem.Click += new System.EventHandler(this.bandasToolStripMenuItem_Click);
             // 
@@ -191,28 +187,6 @@
             this.salirDeAplicaciónToolStripMenuItem.Text = "Salir de Aplicación";
             this.salirDeAplicaciónToolStripMenuItem.Click += new System.EventHandler(this.salirDeAplicaciónToolStripMenuItem_Click);
             // 
-            // entradasToolStripMenuItem
-            // 
-            this.entradasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.comprarToolStripMenuItem,
-            this.anularToolStripMenuItem});
-            this.entradasToolStripMenuItem.Name = "entradasToolStripMenuItem";
-            this.entradasToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.entradasToolStripMenuItem.Text = "Entradas";
-            // 
-            // comprarToolStripMenuItem
-            // 
-            this.comprarToolStripMenuItem.Name = "comprarToolStripMenuItem";
-            this.comprarToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.comprarToolStripMenuItem.Text = "Comprar";
-            this.comprarToolStripMenuItem.Click += new System.EventHandler(this.comprarToolStripMenuItem_Click);
-            // 
-            // anularToolStripMenuItem
-            // 
-            this.anularToolStripMenuItem.Name = "anularToolStripMenuItem";
-            this.anularToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.anularToolStripMenuItem.Text = "Anular";
-            // 
             // frmMenu2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -252,9 +226,6 @@
         private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem salirDeAplicaciónToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem comuniqueseConSuAdministradorToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem entradasToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem comprarToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem anularToolStripMenuItem;
 
     }
 }

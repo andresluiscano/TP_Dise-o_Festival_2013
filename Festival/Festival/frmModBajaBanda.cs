@@ -77,5 +77,10 @@ namespace Festival
             }
             myConnection.Close();
         }
+
+        private void frmModBajaBanda_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -54,12 +54,6 @@
     <Compile Include="frmAgregarFestival.Designer.cs">
       <DependentUpon>frmAgregarFestival.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmComprarEntradas.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmComprarEntradas.Designer.cs">
-      <DependentUpon>frmComprarEntradas.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -104,9 +98,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="frmComprarEntradas.resx">
-      <DependentUpon>frmComprarEntradas.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
@@ -139,6 +130,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -150,6 +142,49 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <Compile Include="SQL_Methods.cs" />
+    <Compile Include="strategy.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\a.jpg" />
+    <None Include="Resources\a1.jpg" />
+    <Content Include="Resources\b.jpg" />
+    <None Include="Resources\b1.jpg" />
+    <Content Include="Resources\butaca20x20roja.jpg" />
+    <None Include="Resources\butaca20x20roja1.jpg" />
+    <Content Include="Resources\butaca20x20verde.jpg" />
+    <None Include="Resources\butaca20x20verde1.jpg" />
+    <Content Include="Resources\butaca_roja.jpg" />
+    <None Include="Resources\butaca_roja1.jpg" />
+    <Content Include="Resources\butaca_verde.jpg" />
+    <None Include="Resources\butaca_verde1.jpg" />
+    <Content Include="Resources\c.jpg" />
+    <None Include="Resources\c1.jpg" />
+    <Content Include="Resources\d.jpg" />
+    <None Include="Resources\d1.jpg" />
+    <Content Include="Resources\e.jpg" />
+    <None Include="Resources\e1.jpg" />
+    <Content Include="Resources\escenario copia.jpg" />
+    <None Include="Resources\escenario copia1.jpg" />
+    <Content Include="Resources\escenario.jpg" />
+    <None Include="Resources\escenario1.jpg" />
+    <Content Include="Resources\f.jpg" />
+    <None Include="Resources\f1.jpg" />
+    <Content Include="Resources\fondo2.jpg" />
+    <None Include="Resources\fondo21.jpg" />
+    <Content Include="Resources\fondo3.jpg" />
+    <None Include="Resources\fondo31.jpg" />
+    <Content Include="Resources\fondo4.jpg" />
+    <None Include="Resources\fondo41.jpg" />
+    <Content Include="Resources\fondo5.jpg" />
+    <None Include="Resources\fondo51.jpg" />
+    <Content Include="Resources\fondoForms.jpg" />
+    <None Include="Resources\fondoForms1.jpg" />
+    <Content Include="Resources\fondoLogin.jpg" />
+    <None Include="Resources\fondoLogin1.jpg" />
+    <Content Include="Resources\guitarra.ico" />
+    <Content Include="Resources\llave.png" />
+    <None Include="Resources\llave1.png" />
+    <Content Include="Resources\Salleedesign-Music-Guitar-stratocaster-red.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
