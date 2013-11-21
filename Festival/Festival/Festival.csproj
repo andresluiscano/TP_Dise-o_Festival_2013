@@ -54,6 +54,12 @@
     <Compile Include="frmAgregarFestival.Designer.cs">
       <DependentUpon>frmAgregarFestival.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmComprarEntradas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmComprarEntradas.Designer.cs">
+      <DependentUpon>frmComprarEntradas.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -98,6 +104,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmComprarEntradas.resx">
+      <DependentUpon>frmComprarEntradas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
@@ -140,6 +149,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="SQL_Methods.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -23,7 +23,7 @@ IF OBJECT_ID('Festival','U') is not null drop table Festival;
 --Crea tabla Festival
 CREATE TABLE Festival
 (
-	id_festival integer PRIMARY KEY,
+	id_festival integer PRIMARY KEY IDENTITY(1,1),
 	anio_ed integer,
 	dto_vta_anticip integer,
 	dia_fest integer,
@@ -45,7 +45,7 @@ CREATE TABLE DiaFestival
 --Crea tabla GrupoMusical
 CREATE TABLE GrupoMusical
 (
-	id_grupo integer PRIMARY KEY,
+	id_grupo integer PRIMARY KEY IDENTITY(1,1),
 	nombre varchar(100),
 	cant_integrantes integer,
 	id_dia integer,
@@ -79,12 +79,13 @@ CREATE TABLE Sector
 --Crea tabla Entrada
 CREATE TABLE Entrada
 (
-	id_entrada integer PRIMARY KEY,
+	id_entrada integer,
 	fec_vta datetime,
 	monto float,
-	nro_ticket integer,
+	nro_ticket integer PRIMARY KEY IDENTITY(1000,101),
 	id_sector integer,
 	id_estado integer,
+	dni_cliente int unique,
 	FOREIGN KEY (id_sector) REFERENCES Sector(id_sector),
 	FOREIGN KEY (id_estado) REFERENCES Estado(id_estado)
 );
@@ -99,7 +100,6 @@ CREATE TABLE PrecioEntrada
 	id_entrada integer,
 	id_dia integer,
 	id_tipo_entrada integer,
-	FOREIGN KEY (id_entrada) REFERENCES Entrada(id_entrada),
 	FOREIGN KEY (id_tipo_entrada) REFERENCES TipoEntrada(id_tipo_entrada),
 	FOREIGN KEY (id_dia) REFERENCES DiaFestival(id_dia)
 );
@@ -134,11 +134,80 @@ CREATE TABLE Usuario
 	password nvarchar(100) NOT NULL
 );
 
+
+GO
 --Agrego un usuario
 INSERT INTO Usuario (nombre,password) VALUES ('admin','admin');
 
+GO
+--Store Procedure para agregar festivales
+CREATE PROCEDURE insertarFestival
+(@anio int, @dto int, @dia int, @fecha datetime, @dev float)
+AS
+INSERT
+INTO Festival(anio_ed, dto_vta_anticip, dia_fest, f_inicio, pje_dev_por_anul)
+VALUES(@anio, @dto, @dia, @fecha, @dev)
 
+GO
+--Store Procedure para eliminar festivales
+CREATE PROCEDURE eliminarFestival
+(@fech datetime)
+AS
+DELETE Festival
+WHERE f_inicio = @fech
 
+GO
+--Store Procedure para agregar banda
+CREATE PROCEDURE insertarBanda
+(@nom varchar(100), @cint int)
+AS
+INSERT
+INTO GrupoMusical(nombre, cant_integrantes)
+VALUES(@nom, @cint)
 
+GO
+--Store Procedure para eliminar banda
+CREATE PROCEDURE eliminarBanda
+(@nom varchar(100))
+AS
+DELETE GrupoMusical
+WHERE nombre = @nom
 
+GO
+--Store Procedure para comprar entrada
+CREATE PROCEDURE comprarEntrada
+(@dni int, @mont int, @fech datetime)
+AS
+INSERT
+INTO Entrada(dni_cliente, monto, fec_vta)
+VALUES(@dni, @mont, @fech)
 
+GO
+DROP PROCEDURE insertarFestival
+GO
+DROP PROCEDURE eliminarFestival
+GO
+DROP PROCEDURE insertarBanda
+GO
+DROP TABLE Butaca
+GO
+DROP TABLE Fila
+GO
+DROP TABLE PrecioEntrada
+GO
+DROP TABLE Entrada
+GO
+DROP TABLE Sector
+GO
+DROP TABLE Estado
+GO
+DROP TABLE TipoEntrada
+GO
+DROP TABLE GrupoMusical
+GO
+DROP TABLE DiaFestival
+GO
+DROP TABLE Festival
+GO
+DROP TABLE Usuario
+GO

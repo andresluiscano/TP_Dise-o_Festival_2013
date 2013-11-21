@@ -37,9 +37,7 @@ namespace Festival
 
         private void agregarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form frmAgregar = new frmAltaBanda();
-            this.Hide();
-            frmAgregar.Show();
+            new frmAltaBanda(this);
         }
 
         private void editarToolStripMenuItem_Click(object sender, EventArgs e)
@@ -49,10 +47,7 @@ namespace Festival
 
         private void modificarEliminarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form frmModBajaBanda = new frmModBajaBanda();
-            this.Hide();
-            frmModBajaBanda.Show();
-
+            new frmModBajaBanda(this);
         }
 
         private void bandasToolStripMenuItem_Click(object sender, EventArgs e)
@@ -67,16 +62,12 @@ namespace Festival
 
         private void agregarToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            Form frmAgregarFestival = new frmAgregarFestival();
-            this.Hide();
-            frmAgregarFestival.Show();
+            new frmAgregarFestival(this);
         }
 
         private void modificarEliminarToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            Form frmModBajaFestival = new frmModBajaFestival();
-            this.Hide();
-            frmModBajaFestival.Show();
+            new frmModBajaFestival(this);
         }
 
         private void ventaDeEntradasToolStripMenuItem_Click_1(object sender, EventArgs e)
@@ -84,6 +75,21 @@ namespace Festival
             this.Hide();
             Form frmVentaEntradas = new frmVentaEntradas();
             frmVentaEntradas.Show();
+        }
+
+        private void salirDeAplicaciónToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void verDiagramacionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comprarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new frmComprarEntradas(this);
         }
     }
 }

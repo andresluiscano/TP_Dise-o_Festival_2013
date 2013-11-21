@@ -15,19 +15,19 @@ namespace Festival
         public frmLogin()
         {
             InitializeComponent();
+            this.txtUser.Select();
         }
 
-        private void label2_Click(object sender, EventArgs e)
-        {
+        SqlConnection conexionAlternativa = SQL_Methods.IniciarConnection();
 
-        }
-        SqlConnection miConexion = new SqlConnection (@"Data Source=WOLF\SQLSERVER2008; Initial Catalog=TP-ROCK; Integrated Security=true");
+        // SqlConnection miConexion = new SqlConnection (@"Data Source=JOAQO-TOSHIBA\SQLSERVER2008; Initial Catalog=TP-ROCK; Integrated Security=true");
  
         private void btnIngresar_Click(object sender, EventArgs e)
         {
             Form Form2 = new frmMenu2();
-            miConexion.Open();
-            SqlCommand consulta= new SqlCommand("SELECT * FROM Usuario WHERE nombre='"+txtUser.Text+"' and password='"+txtPass.Text+"'", miConexion);
+            //miConexion.Open();
+            //SqlCommand consulta= new SqlCommand("SELECT * FROM Usuario WHERE nombre='"+txtUser.Text+"' and password='"+txtPass.Text+"'", miConexion);
+            SqlCommand consulta = new SqlCommand("SELECT * FROM Usuario WHERE nombre='" + txtUser.Text + "' and password='" + txtPass.Text + "'", conexionAlternativa);
             SqlDataReader ejecuta = consulta.ExecuteReader();
 
             if (ejecuta.Read() == true)
@@ -42,24 +42,16 @@ namespace Festival
                 txtUser.Text = "";
                 txtPass.Text = "";
                 txtUser.Focus();
+                this.txtUser.Select();
              }
-            miConexion.Close();
-        }
-
-        private void lblUser_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
+            //miConexion.Close();
+            conexionAlternativa.Close();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             this.Close();
-          
+            Application.Exit();
         }
 
         private void txtUser_TextChanged(object sender, EventArgs e)

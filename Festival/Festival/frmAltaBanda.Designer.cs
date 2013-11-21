@@ -35,20 +35,21 @@
             this.label2 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.nombreBanda = new System.Windows.Forms.TextBox();
+            this.cantIntegrantes = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(112, 211);
+            this.button1.Location = new System.Drawing.Point(12, 212);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 0;
             this.button1.Text = "Aceptar";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label4
             // 
@@ -61,7 +62,6 @@
             this.label4.Size = new System.Drawing.Size(107, 17);
             this.label4.TabIndex = 9;
             this.label4.Text = "Nombre Banda:";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // pictureBox1
             // 
@@ -82,7 +82,6 @@
             this.label2.Size = new System.Drawing.Size(60, 17);
             this.label2.TabIndex = 12;
             this.label2.Text = "Imagen:";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // button2
             // 
@@ -95,27 +94,27 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(197, 211);
+            this.button3.Location = new System.Drawing.Point(216, 212);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(75, 23);
             this.button3.TabIndex = 18;
-            this.button3.Text = "Cancelar";
+            this.button3.Text = "Volver";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
-            // textBox3
+            // nombreBanda
             // 
-            this.textBox3.Location = new System.Drawing.Point(174, 25);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(121, 20);
-            this.textBox3.TabIndex = 19;
+            this.nombreBanda.Location = new System.Drawing.Point(174, 25);
+            this.nombreBanda.Name = "nombreBanda";
+            this.nombreBanda.Size = new System.Drawing.Size(121, 20);
+            this.nombreBanda.TabIndex = 19;
             // 
-            // textBox1
+            // cantIntegrantes
             // 
-            this.textBox1.Location = new System.Drawing.Point(174, 64);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(121, 20);
-            this.textBox1.TabIndex = 21;
+            this.cantIntegrantes.Location = new System.Drawing.Point(174, 64);
+            this.cantIntegrantes.Name = "cantIntegrantes";
+            this.cantIntegrantes.Size = new System.Drawing.Size(121, 20);
+            this.cantIntegrantes.TabIndex = 21;
             // 
             // label1
             // 
@@ -128,7 +127,6 @@
             this.label1.Size = new System.Drawing.Size(168, 17);
             this.label1.TabIndex = 20;
             this.label1.Text = "Cantidad de Integrantes:";
-            this.label1.Click += new System.EventHandler(this.label1_Click_1);
             // 
             // frmAltaBanda
             // 
@@ -136,9 +134,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(303, 247);
-            this.Controls.Add(this.textBox1);
+            this.ControlBox = false;
+            this.Controls.Add(this.cantIntegrantes);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.nombreBanda);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.label2);
@@ -149,7 +148,6 @@
             this.Name = "frmAltaBanda";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Elegir Banda";
-            this.Load += new System.EventHandler(this.frmElegirBanda_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -164,8 +162,8 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox nombreBanda;
+        private System.Windows.Forms.TextBox cantIntegrantes;
         private System.Windows.Forms.Label label1;
     }
 }
