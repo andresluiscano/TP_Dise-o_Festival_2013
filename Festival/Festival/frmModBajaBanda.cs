@@ -77,5 +77,15 @@ namespace Festival
             }
             myConnection.Close();
         }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void frmModBajaBanda_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -112,5 +112,10 @@ namespace Festival
             }
             return condicion;
         }
+
+        private void frmAltaBanda_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -84,12 +84,26 @@ namespace Festival
 
         private void verDiagramacionToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            gboxDiagramcion.Visible = true;
+            cboFestival.Visible = true;
+            lblFestival.Visible = true;
+            btnDiagramar.Visible = true;
 
         }
 
         private void comprarToolStripMenuItem_Click(object sender, EventArgs e)
         {
             new frmComprarEntradas(this);
+        }
+
+        private void agregarToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            new frmAgregarDia(this);
+        }
+
+        private void cboFestival_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

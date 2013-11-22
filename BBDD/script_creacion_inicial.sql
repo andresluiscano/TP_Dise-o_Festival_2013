@@ -23,7 +23,7 @@ IF OBJECT_ID('Festival','U') is not null drop table Festival;
 --Crea tabla Festival
 CREATE TABLE Festival
 (
-	id_festival integer PRIMARY KEY IDENTITY(1,1),
+	id_festival integer PRIMARY KEY ,--IDENTITY(1,1),
 	anio_ed integer,
 	dto_vta_anticip integer,
 	dia_fest integer,
@@ -45,7 +45,7 @@ CREATE TABLE DiaFestival
 --Crea tabla GrupoMusical
 CREATE TABLE GrupoMusical
 (
-	id_grupo integer PRIMARY KEY IDENTITY(1,1),
+	id_grupo integer PRIMARY KEY,-- IDENTITY(1,1),
 	nombre varchar(100),
 	cant_integrantes integer,
 	id_dia integer,
@@ -181,6 +181,15 @@ AS
 INSERT
 INTO Entrada(dni_cliente, monto, fec_vta)
 VALUES(@dni, @mont, @fech)
+GO
+
+--Store Procedure para agregar dias a los festivales
+CREATE PROCEDURE agregarDia
+(@id_festival int, @dia int,@fecha datetime, @precio float, @fec_vec datetime)
+AS
+INSERT
+INTO DiaFestival(id_dia, fecha, precio_entr, fecha_vto_anul_entr, id_festival)
+VALUES(@dia, @fecha, @precio, @fec_vec, @id_festival)
 
 GO
 DROP PROCEDURE insertarFestival

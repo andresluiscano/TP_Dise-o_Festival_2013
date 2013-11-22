@@ -162,5 +162,20 @@ namespace Festival
             this.horaInicio.Items.Add("20:30");
             this.horaInicio.Items.Add("21:00");
         }
+
+        private void frmAgregarFestival_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void horaInicio_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void fechaFestival_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

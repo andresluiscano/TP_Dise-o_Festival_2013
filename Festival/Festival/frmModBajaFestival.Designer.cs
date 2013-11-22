@@ -42,6 +42,7 @@
             this.fechaFestival.Name = "fechaFestival";
             this.fechaFestival.Size = new System.Drawing.Size(209, 20);
             this.fechaFestival.TabIndex = 44;
+            this.fechaFestival.ValueChanged += new System.EventHandler(this.fechaFestival_ValueChanged);
             // 
             // button3
             // 

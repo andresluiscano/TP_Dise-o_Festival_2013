@@ -64,5 +64,10 @@ namespace Festival
             menu.Visible = true;
             this.Dispose();
         }
+
+        private void fechaFestival_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

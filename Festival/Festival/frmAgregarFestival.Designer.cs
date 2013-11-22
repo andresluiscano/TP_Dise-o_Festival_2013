@@ -132,6 +132,7 @@
             this.horaInicio.Name = "horaInicio";
             this.horaInicio.Size = new System.Drawing.Size(121, 21);
             this.horaInicio.TabIndex = 33;
+            this.horaInicio.SelectedIndexChanged += new System.EventHandler(this.horaInicio_SelectedIndexChanged);
             // 
             // fechaFestival
             // 
@@ -139,6 +140,7 @@
             this.fechaFestival.Name = "fechaFestival";
             this.fechaFestival.Size = new System.Drawing.Size(121, 20);
             this.fechaFestival.TabIndex = 34;
+            this.fechaFestival.ValueChanged += new System.EventHandler(this.fechaFestival_ValueChanged);
             // 
             // cantBandas
             // 
