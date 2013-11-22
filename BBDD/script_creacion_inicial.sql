@@ -134,6 +134,15 @@ CREATE TABLE Usuario
 	password nvarchar(100) NOT NULL
 );
 
+CREATE TABLE ButacaPrecio
+(
+	id_butaca_sector integer PRIMARY KEY,
+	sector varchar(3),
+	id_precio integer,
+	disponible binary,
+	FOREIGN KEY (id_precio) REFERENCES PrecioEntrada(id_precio)
+)
+
 
 GO
 --Agrego un usuario
